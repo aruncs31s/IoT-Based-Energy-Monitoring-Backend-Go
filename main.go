@@ -22,9 +22,20 @@ func main() {
 func HelloWorld(c *gin.Context) {
 
 	random := rand.Float64()
-	reading := Readings{
-		Voltage: random,
-		Current: 10.0,
+	reading := []Readings{
+		{
+			Voltage: 230,
+			Current: 10.0,
+		},
+		{
+			Voltage: 240,
+			Current: 9.5,
+		},
+		{
+			Voltage: 220,
+			Current: 10.5,
+		},
 	}
+
 	c.JSON(http.StatusOK, reading)
 }
