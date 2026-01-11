@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math/rand"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -20,8 +21,9 @@ func main() {
 }
 func HelloWorld(c *gin.Context) {
 
+	random := rand.Float64()
 	reading := Readings{
-		Voltage: 230.0,
+		Voltage: random,
 		Current: 10.0,
 	}
 	c.JSON(http.StatusOK, reading)
